@@ -1,0 +1,26 @@
+myapp <command> <option>
+
+Usage:
+
+node myapp.js --help         Show help 
+
+node myapp init              initialize the app             
+node myapp.js init --all     Create folder structure and files
+node myapp.js init --cat     Create config file with default settings
+node myapp.js init --mk      Create folder structure
+
+For user token:
+node myapp.js token --count                       count all tokens     
+node myapp.js token --list                        list all tokens
+node myapp.js token --new <username>              create new user token
+node myapp.js token --upd p <username> <phone>    update user phone
+node myapp.js token --upd e <username> <email>    update user email
+node myapp.js token --fetch <username>            fetch token by username
+node myapp token --search u <username>            search for token by username
+node myapp token --search e <email>               search for token by email
+node myapp token --search p <phone>               search for token by phone
+
+For config:
+node myapp.js config --show                       show all config settings
+node myapp.js config --set <key> <"value">        (ex. ... --set name "New Project Name")
+node myapp.js config --reset                      reset config to default
