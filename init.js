@@ -9,19 +9,19 @@ const { folders, configjson, tokenjson } = require("./templates"); // Templates
 global.DEBUG = true; // Debug flag
 
 // Command line arguments - init
-const args = yargs
+const args = yargs // Command line arguments
   .usage("Usage: node $0 --[option]")
   .option("all", {
     alias: "a",
     describe: "Create folder structure and config file",
     type: "boolean",
   })
-  .option("mk", {
+  .option("mk", { // Make folders
     alias: "m",
     describe: "Create folder structure",
     type: "boolean",
   })
-  .option("cat", {
+  .option("cat", { // Create config and token files
     alias: "c",
     describe: "Create config file with default settings",
     type: "boolean",
@@ -47,7 +47,7 @@ function createFolders() { // Create folders
       console.log(err);
     }
   });
-  if (mkcount === 0) {
+  if (mkcount === 0) { // Check if folders already exist
     console.log("All folders already exist.");
   } else if (mkcount <= folders.length) {
     console.log(mkcount + " of " + folders.length + " folders were created.");
@@ -88,12 +88,12 @@ function createFiles() { // Create config.json and tokens.json files
   }
 }
 
-const myArgs = process.argv.slice(2);
+const myArgs = process.argv.slice(2); //
 
-function initializeApp() {
+function initializeApp() { //
   if (DEBUG) console.log("initializeApp()");
 
-  switch (myArgs[1]) {
+  switch (myArgs[1]) { 
     case "--all":
       if (DEBUG) console.log("--all createFolders() & createFiles()");
       createFolders();
