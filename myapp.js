@@ -1,9 +1,9 @@
 const fs = require("fs"); // File system
 const { initializeApp } = require("./init.js");// Initialize app
-const { configApp } = require("./config.js");// 
+const { configApp } = require("./config.js");// Config app
 const { tokenApp, app } = require("./token.js");  // Generate token
 const myArgs = process.argv.slice(2); // Get command line args
-global.DEBUG = true;//  
+global.DEBUG = true;// Debug mode
 
 if (DEBUG && myArgs.length > 1) console.log("the myapp.args: ", myArgs); // Debug
 
