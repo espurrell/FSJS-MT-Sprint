@@ -4,7 +4,7 @@ const configjson = {
   name: "MT Project CLI",
   version: "1.0.0",
   description: "The Command Line Interface (CLI) for the MT Project",
-  main: "index.js",
+  main: "myapp.js",
   superuser: "postgres",
   database: "mtdb",
 };
