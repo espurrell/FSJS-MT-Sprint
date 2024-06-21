@@ -136,6 +136,6 @@ module.exports = {
   displayConfig,
   resetConfig,
   setConfig,
-  //logEvents,
+  logEvents,
   MyEmitter,
 };
