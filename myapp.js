@@ -26,7 +26,7 @@ switch (myArgs[0]) { // Switch on first arg
   case "--help":
   case "--h":
   default:
-    fs.readFile(__dirname + "/usage.txt", (error, data) => {
+    fs.readFile(__dirname + "/usage.txt", (error, data) => { // Read usage file
       if (error) throw error;
       console.log(data.toString());
     });
