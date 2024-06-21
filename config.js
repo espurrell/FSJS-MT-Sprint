@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { EventEmitter } = require("events");
 
-const configjson = require("./templates").configjson;
+const configjson = require("./template").configjson;
 const myArgs = process.argv.slice(2);
 
 const DEBUG = true;
@@ -136,6 +136,6 @@ module.exports = {
   displayConfig,
   resetConfig,
   setConfig,
-  logEvents,
+  //logEvents,
   MyEmitter,
 };

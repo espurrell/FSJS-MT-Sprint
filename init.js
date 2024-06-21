@@ -5,7 +5,7 @@ const yargs = require("yargs"); // Command line arguments
 const express = require("express"); // Express module
 const app = express(); // Express app
 const port = 3000; // Port number
-const { folders, configjson, tokenjson } = require("./templates"); // Templates
+const { folders, configjson, tokenjson } = require("./template"); // Templates
 global.DEBUG = true; // Debug flag
 
 // Command line arguments - init

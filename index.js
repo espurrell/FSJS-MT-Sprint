@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { initializeApp } = require("./init.js");
 const { configApp } = require("./config.js");
-const { tokenApp, app } = require("./userToken.js");
+const { tokenApp, app } = require("./token.js");
 const myArgs = process.argv.slice(2);
 global.DEBUG = true;
 
