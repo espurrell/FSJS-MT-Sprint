@@ -1,14 +1,14 @@
-const fs = require("fs");
-const path = require("path");
-const fsPromises = require("fs").promises;
-const yargs = require("yargs"); // library for parsing command line arguments
-const express = require("express");
-const app = express();
-const port = 3000;
-const { folders, configjson, tokenjson } = require("./templates");
-global.DEBUG = true;
+const fs = require("fs"); // File system module
+const path = require("path"); // Path module
+const fsPromises = require("fs").promises; // File system promises
+const yargs = require("yargs"); // Command line arguments
+const express = require("express"); // Express module
+const app = express(); // Express app
+const port = 3000; // Port number
+const { folders, configjson, tokenjson } = require("./templates"); // Templates
+global.DEBUG = true; // Debug flag
 
-// Init CL args parser
+// Command line arguments - init
 const args = yargs
   .usage("Usage: node $0 --[option]")
   .option("all", {
@@ -27,13 +27,13 @@ const args = yargs
     type: "boolean",
   }).argv;
 
-// Helper fn to log messages w/levels
-const log = (level, message) => {
+
+const log = (level, message) => { // Log function
   const date = new Date().toISOString();
   console.log(`[${date}] [${level}] ${message}`);
 };
 
-function createFolders() {
+function createFolders() { // Create folders
   if (DEBUG) console.log("init.createFolders()");
   let mkcount = 0;
   folders.forEach((element) => {
@@ -56,7 +56,7 @@ function createFolders() {
   }
 }
 
-function createFiles() {
+function createFiles() { // Create config.json and tokens.json files
   if (DEBUG) console.log("init.createFiles()");
   try {
     let configdata = JSON.stringify(configjson, null, 2);
@@ -116,9 +116,9 @@ function initializeApp() {
       });
   }
 
-  //  routes & server
+  // Express routes and start server
   app.get("/", (req, res) => {
-    // Serve index.html from the views directory
+    
     res.sendFile(path.join(__dirname, "views", "index.html"));
   });
 
