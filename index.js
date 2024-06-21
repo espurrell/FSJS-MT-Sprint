@@ -1,26 +1,26 @@
-const fs = require("fs");
-const { initializeApp } = require("./init.js");
-const { configApp } = require("./config.js");
-const { tokenApp, app } = require("./token.js");
-const myArgs = process.argv.slice(2);
-global.DEBUG = true;
+const fs = require("fs"); // File system
+const { initializeApp } = require("./init.js");// Initialize app
+const { configApp } = require("./config.js");// 
+const { tokenApp, app } = require("./token.js");  // Generate token
+const myArgs = process.argv.slice(2); // Get command line args
+global.DEBUG = true;//  
 
-if (DEBUG && myArgs.length > 1) console.log("the myapp.args: ", myArgs);
+if (DEBUG && myArgs.length > 1) console.log("the myapp.args: ", myArgs); // Debug
 
-switch (myArgs[0]) {
+switch (myArgs[0]) { // Switch on first arg
   case "init":
   case "i":
-    if (DEBUG) console.log(myArgs[0], " - initialize app.");
+    if (DEBUG) console.log(myArgs[0], " - initialize app."); // Debug
     initializeApp();
     break;
   case "config":
   case "c":
-    if (DEBUG) console.log(myArgs[0], " - disp config file");
+    if (DEBUG) console.log(myArgs[0], " - disp config file"); // Debug
     configApp();
     break;
   case "token":
   case "t":
-    if (DEBUG) console.log(myArgs[0], " - generate token");
+    if (DEBUG) console.log(myArgs[0], " - generate token"); // Debug
     tokenApp();
     break;
   case "--help":

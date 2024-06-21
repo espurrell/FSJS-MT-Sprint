@@ -8,7 +8,7 @@ const port = 3000; // Port number
 const { folders, configjson, tokenjson } = require("./template"); // Templates
 global.DEBUG = true; // Debug flag
 
-// Command line arguments - init
+// init
 const args = yargs // Command line arguments
   .usage("Usage: node $0 --[option]")
   .option("all", {
