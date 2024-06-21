@@ -11,7 +11,12 @@ class MyEmitter extends EventEmitter {}
 
 const myEmitter = new MyEmitter();
 
+// Fn to log events
+function logEvents(event, level, msg) {
+  console.log(`[${event}] [${level}] ${msg}`);
+}
 
+myEmitter.on("log", (event, level, msg) => logEvents(event, level, msg));
 
 
 // Fn to display config
