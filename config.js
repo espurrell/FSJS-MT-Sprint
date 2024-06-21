@@ -1,22 +1,22 @@
-const fs = require("fs");
-const path = require("path");
-const { EventEmitter } = require("events");
+const fs = require("fs"); // File system
+const path = require("path"); // Path
+const { EventEmitter } = require("events"); //  Event emitter
 
-const configjson = require("./template").configjson;
-const myArgs = process.argv.slice(2);
+const configjson = require("./template").configjson; // Config JSON
+const myArgs = process.argv.slice(2); //  CLI args
 
-const DEBUG = true;
+const DEBUG = true; //  Debug mode
 
-class MyEmitter extends EventEmitter {}
+class MyEmitter extends EventEmitter {} //  Event emitter class
 
-const myEmitter = new MyEmitter();
+const myEmitter = new MyEmitter(); // Event emitter instance
 
 // Fn to log events
 function logEvents(event, level, msg) {
   console.log(`[${event}] [${level}] ${msg}`);
 }
 
-myEmitter.on("log", (event, level, msg) => logEvents(event, level, msg));
+myEmitter.on("log", (event, level, msg) => logEvents(event, level, msg)); //  Event listener
 
 
 // Fn to display config
