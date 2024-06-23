@@ -21,7 +21,7 @@ const tokenCount = function () {
       else {
         let tokens = JSON.parse(data);
         let count = tokens.length;
-        console.log(`Gamers with tokens: ${count}.`);
+        console.log(`Users with tokens: ${count}.`);
         myEmitter.emit(
           "log",
           "token.tokenCount()",
