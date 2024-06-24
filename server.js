@@ -57,7 +57,7 @@ app.use((req, res, next) => {
 
 // Route handler for GET requests to "/new"
 app.get("/new", (req, res) => {
-  res.render("newusertoken", { message: "" }); 
+  res.render("token", { message: "" }); 
 });
 
 // Route handler for POST requests to "/new"
@@ -69,7 +69,7 @@ app.post("/new", (req, res) => {
       res.status(500).send("Error generating token");
     } else {
       // Render the newusertoken template with the message
-      res.render("newusertoken", { message: `Token was created for ${username}: ${theToken}` });
+      res.render("token", { message: `Token was created for ${username}: ${theToken}` });
     }
   });
 });
