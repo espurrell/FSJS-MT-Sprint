@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Token</title>
+    //need to add in the css file
+    
+</head>
+<body>
+    <header>
+        <h1 class="headerTitle">CLI - Tokens</h1>
+        <nav>
+            <ul>
+                <li><a href="http://localhost:3000/">Back Home</a></li>
+                <li><a href="http://localhost:3000/count">Token Count</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container1">
+        <div class="box1">
+            <br>
+            <form action="/new" method="post">
+                <label for="inputID">Add a New User:</label><br>
+                <input id="inputID" type="text" name="username" required>
+                <br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+        <% if (message) { %>
+    <div class="message">
+        <p><%= message %></p>
+    </div>
+    <% } %>
+    
+</body>
+</html>

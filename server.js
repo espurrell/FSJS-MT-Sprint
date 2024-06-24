@@ -1,6 +1,6 @@
 const express = require("express"); // Import the express library
 const bodyParser = require("body-parser"); // Import the body-parser library
-const { newToken, tokenCount } = require("./userToken"); // Import the newToken and tokenCount functions
+const { newToken, tokenCount } = require("./token"); // Import the newToken and tokenCount functions
 const fs = require("fs"); //    Import the fs library
 const path = require("path"); // Import the path library
 
