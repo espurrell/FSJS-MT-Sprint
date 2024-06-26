@@ -4,8 +4,11 @@ const { newToken, tokenCount } = require("./token"); // Import the newToken and 
 const fs = require("fs"); //    Import the fs library
 const path = require("path"); // Import the path library
 
+
 const app = express(); // Create a new express application
 const PORT = process.env.PORT || 3000; // Set the port
+
+
 
 // parse request bodies
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,6 +22,9 @@ app.get("/", (req, res) => {
   res.render("index"); // Render the EJS file
 });
 app.use(express.static("public"));
+
+
+
 // Logging middleware
 app.use((req, res, next) => {
   const logMessage = `${new Date().toISOString()} - ${req.method} ${req.url}\n`;
@@ -54,6 +60,11 @@ app.use((req, res, next) => {
 
   next();
 });
+
+
+
+//ROUTES
+
 
 // Route handler for GET requests to "/new"
 app.get("/new", (req, res) => {
@@ -130,11 +141,18 @@ app.post("/update", (req, res) => {
   });
 });
 
+
+
+
+
+
 // Error handling for sending files
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
 });
+
+
 
 // Start the server
 app.listen(PORT, () => {
