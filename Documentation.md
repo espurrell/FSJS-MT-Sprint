@@ -1,0 +1,26 @@
+Getting Started:
+
+To run the project locally, follow these steps:
+
+1. Clone the repository to your local machine.
+
+2. Install Node.js if you haven't already.
+
+3. Navigate to the project directory in your terminal. = cd FSJS
+
+4. Install project dependencies by running: npm install
+
+5. Start the server by running: node server.js
+
+6. Access the application in your API testing tool or browser.
+
+
+
+Usage:
+Once the application is running, you can perform the following actions:
+
+    - Generate a new token for a user.
+    - Count the total number of tokens in the system.
+    - Update an existing token record.
+    - Fetch a token record for a specific user.
+    - Search for tokens based on username, email, or phone number.
